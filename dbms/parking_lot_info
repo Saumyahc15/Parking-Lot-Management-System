@@ -1,0 +1,11 @@
+create database parking_lot_info;
+USE parking_lot_info;
+
+CREATE TABLE parked_cars_v2 (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    owner VARCHAR(255) NOT NULL,
+    car_details VARCHAR(255) NOT NULL,
+    license_plate VARCHAR(50) NOT NULL,
+    entry_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    exit_date TIMESTAMP NULL
+);
