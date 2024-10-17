@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background5.jpg'); /* Add your background image URL here */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.nav-bar {
+    background-color: #0009;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    color: #ccc;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tagline {
+    margin-bottom: 50px;
+}
+
+.tagline h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.hero-section {
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero-section h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.cta-button:hover {
+    background-color: #3e8e41;
+}
+
+.cta-button:last-child {
+    margin-right: 0;
+}
