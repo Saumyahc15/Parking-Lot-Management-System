@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot Management System</title>
+    <link rel="stylesheet" href="user_data.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="user_data.html">Park Vehicle</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Parking Lot Management System</h2>
+
+        <div class="form-container">
+            <form id="parkingForm" action="userdata.php" method="POST">
+                <h3>Parking Form</h3>
+                <label for="owner">Car Owner/Driver:</label>
+                <input type="text" id="owner" name="owner" required>
+                
+                <label for="car">Car Brand/Model/Color:</label>
+                <input type="text" id="car" name="car" required>
+
+                <label for="license">License Plate:</label>
+                <input type="text" id="license" name="license" required>
+
+                <button type="submit">Save</button>
+                <button type="button" onclick="generateTicket()">Generate Ticket</button> <!-- New button -->
+            </form>
+        </div>
+
+        <div class="list-container">
+            <h3>List of Parked Cars</h3>
+            <input type="text" id="search" placeholder="Search...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Owner</th>
+                        <th>Car</th>
+                        <th>License Plate</th>
+                        <th>Entry Date</th>
+                        <th>Exit Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="carList">
+                    <!-- Rows will be dynamically generated with PHP -->
+                    <?php
+                        include 'fetch_cars.php';
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function generateTicket() {
+            // Get values from the form
+            const owner = document.getElementById('owner').value;
+            const car = document.getElementById('car').value;
+            const license = document.getElementById('license').value;
+
+            // Redirect to the ticket page with the form data as query parameters
+            window.location.href = `ticket.php?owner=${encodeURIComponent(owner)}&car=${encodeURIComponent(car)}&license=${encodeURIComponent(license)}`;
+        }
+    </script>
+</body>
+</html>
